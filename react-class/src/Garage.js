@@ -8,11 +8,19 @@ class Garage extends React.Component{
             name: "Indian"
         }
     }
+    changeName = () => {
+        if(this.state.name === "Indian"){
+            this.setState({name:"Foreign"});
+        }else{
+            this.setState({name:"Indian"});
+        }
+    }
     render(){
         return(
             <>
                 <h1>Inside a {this.state.name} Garage</h1>
                 <Car />
+                <button onClick={this.changeName}>Not {this.state.name}?</button>
             </>
         )
     }
